@@ -1,50 +1,28 @@
-# React + TypeScript + Vite
+## Descripción
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido a mi proyecto de Tetris Clásico! Este proyecto es una implementación del clásico juego de Tetris utilizando React y TypeScript.
 
-Currently, two official plugins are available:
+### Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Interfaz gráfica.
+- Previsualización de los tetrominos.
+- Niveles de dificultad.
+- Puntuación.
+- Sonido loop en el menú.
 
-## Expanding the ESLint configuration
+## Contribución
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Si deseas contribuir al proyecto, por favor sigue estos pasos:
 
-- Configure the top-level `parserOptions` property like this:
+1. Haz un fork del repositorio.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. Crea una nueva rama:
+   `git checkout -b feature/new-function`
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3. Realiza tus cambios y haz commit:
+   `git commit -m 'Add new function'`
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+4. Sube tus cambios a GitHub:
+   `git push origin feature/new-function`
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+5. Crea una solicitud de pull en GitHub.

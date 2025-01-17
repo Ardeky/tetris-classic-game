@@ -1,0 +1,144 @@
+.tetris{
+    display: flex;
+    position: relative;
+    width: auto;
+    background: #363636;
+    border-radius: 0.5rem;
+    padding-top: 0.01rem;
+}
+
+.menu {
+    display: block;
+    margin: 6rem;
+    padding: 0.5rem 1.25rem 0rem 1.25rem;
+    background-color: #494545;
+    border-radius: 0.5rem;
+    box-shadow: 0px 9px 30px 0px rgba(139,152,117,1);
+    align-items: center;
+}
+
+.menu button {
+    background-color: #1a1a1a;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu button:hover {
+    box-shadow: 0px 9px 30px 0px rgba(139,152,117,1);
+    transition: box-shadow 0.25s;
+}
+
+.board {
+    display: grid;
+    grid-template-rows: repeat(20, 30px);
+    grid-template-columns: repeat(10, 30px);
+    background: #565656;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+}
+
+.boardCell{
+    width: auto;
+}
+
+.statsAndPreviews{
+    margin: 1.5rem 1rem 0.5rem 0rem;
+}
+
+.previews{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.previewBoard {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-rows: repeat(4, 15px);
+    grid-template-columns: repeat(4, 15px);
+    width: auto;
+    height: 3.5rem;
+}
+
+.gameStats {
+    position: absolute;
+    width: 66px;
+    margin-right: 1rem;
+    padding: 0;
+    list-style-type: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.gameStatsRight {
+    right: 0;
+    bottom: 0;
+    text-align: left;
+}
+
+.gameStats .value {
+    font-size: 1rem;
+    margin-bottom: 0.5em;
+    color: rgba(255, 255, 255, 1);
+}
+
+.GameController{
+    position: absolute;
+    top: -300px;
+}
+
+.tetromino.ghost {
+    border: 2px solid #fff;
+    opacity: 25%;
+    background-color: transparent;
+}
+
+.tetromino.ghost .sparkle {
+    opacity: 0;
+}
+
+.tetromino__i {
+    background-color: rgb(80, 227, 230);
+    border-radius: 0.175rem;
+    border: 2px solid #494949;
+}
+
+.tetromino__j {
+    background-color: rgb(81, 230, 131);
+    border-radius: 0.175rem;
+    border: 2px solid #494949;
+}
+
+.tetromino__l {
+    background-color: rgb(225, 218, 36);
+    border-radius: 0.175rem;
+    border: 2px solid #494949;
+}
+
+.tetromino__o {
+    background-color: rgb(228, 71, 233);
+    border-radius: 0.175rem;
+    border: 2px solid #494949;
+}
+
+.tetromino__s {
+    background-color: rgb(233, 168, 71);
+    border-radius: 0.175rem;
+    border: 2px solid #494949;
+}
+
+.tetromino__t {
+    background-color: rgb(71, 39, 229);
+    border-radius: 0.175rem;
+    border: 2px solid #494949;
+}
+
+.tetromino__z {
+    background-color: rgba(229, 52, 39);
+    border-radius: 0.175rem;
+    border: 2px solid #494949;
+}
