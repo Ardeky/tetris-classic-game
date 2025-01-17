@@ -7,6 +7,7 @@ export function createBoard (rows: number, columns: number) : Board {
   const createRows = Array.from({ length: rows }, () =>
     Array.from({ length: columns }, () => ({ ...Cell }))    
   );
+
   return {
     rows: createRows, size: { rows, columns },
   };
@@ -19,17 +20,21 @@ function findDropPosition(
 ) {
   let max = board.size.rows -position.row + 1;
   let row = 0;
+
   for (let i = 0; i< max; i++) {
     const delta = {row: i, column: 0};
     const result = movePlayer (delta, position, shape, board);
     const {collided} = result;
+
     if (collided) {
       break;
     }
     row = position.row + i;
   }
+
   return { ...position, row };
 };
+
 export function nextBoard ( 
   board: Board, 
   player: Player, 
@@ -38,13 +43,16 @@ export function nextBoard (
 ): Board { 
   const { tetromino, position } = player; 
   const shape = tetromino.shape; 
+  
   let rows = board.rows.map((row) => 
     row.map((cell) => (cell.occupied ? cell : { ...Cell })) 
   );
+
   const dropPosition = findDropPosition( board, position, shape );
   const className = `${tetromino.className} ${ 
     player.isFastDropping ? '' : 'ghost' }`
   ;
+
   rows = transferToBoard ( 
     className, 
     player.isFastDropping, 
@@ -75,6 +83,7 @@ export function nextBoard (
     
     return acc; 
   }, [])
+
   if (lineClear > 0) { 
     addLineClear(lineClear); 
   } 
@@ -82,8 +91,10 @@ export function nextBoard (
   if (player.collided || player.isFastDropping) {
     resetPlayer(); 
   }
+
   return { rows, size: { ...board.size } }; 
 };
+
 export function useBoard ( 
   rows: number, 
   columns: number, 
@@ -120,6 +131,7 @@ export function hasCollision (
     for (let x = 0; x < shape[y].length; x++) {
       if (shape[y][x]) {
         const column = x + position.column;
+
         if (
           board.rows[row] &&
           board.rows[row][column] &&
@@ -146,6 +158,7 @@ export const isWithinBoard = (
       if (shape[y][x]) {
         const column = x + position.column;
         const isValidPosition = board.rows[row] && board.rows[row][column];
+        
         if (!isValidPosition) return false;
       }
     }

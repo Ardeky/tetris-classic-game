@@ -48,6 +48,7 @@ export const useInterval = (
         savedCallback.current();
       }
     }
+    
     if (delay !== null) {
       const id = setInterval(tick, delay);
       return () => clearInterval(id);
@@ -81,6 +82,7 @@ export const useGameStats = (): [GameStats, (lines: number) => void] => {
       const level = 
         newLinesCompleted >= linesPerLevel
         ? previous.level++ : previous.level;
+
       const linesCompleted = newLinesCompleted % linesPerLevel;
     
       return { level, linesCompleted, linesPerLevel, points};

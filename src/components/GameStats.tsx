@@ -7,9 +7,11 @@ export interface GameStats {
   linesCompleted: number;
   linesPerLevel: number;
 }
+
 interface GameStatsProps {
   gameStats: GameStats;
 }
+
 const GameStats: React.FC<GameStatsProps> = ({ gameStats }) => {
   const { level, points, linesCompleted, linesPerLevel } = gameStats;
   const linesToLevel = linesPerLevel - linesCompleted;
@@ -24,4 +26,5 @@ const GameStats: React.FC<GameStatsProps> = ({ gameStats }) => {
     </ul>
   );
 };
+
 export default React.memo(GameStats);
