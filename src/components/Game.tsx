@@ -13,8 +13,7 @@ const Game: React.FC<GameProps> = ({ rows, columns }) => {
   const [gameOver, setGameOver, resetGameOver] = useGameOver();
   
   useEffect(() => { 
-    const audio = new Audio(musicFile); 
-    audio.loop = true;
+    const audio = new Audio(musicFile);
 
     return () => {
       if (audio) {
@@ -27,6 +26,7 @@ const Game: React.FC<GameProps> = ({ rows, columns }) => {
   const start = () => {
     const audio = new Audio(musicFile);
     resetGameOver();
+    audio.loop = true;
     audio.play();
     
   };
