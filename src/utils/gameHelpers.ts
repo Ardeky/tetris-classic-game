@@ -81,7 +81,7 @@ export const useGameStats = (): [GameStats, (lines: number) => void] => {
       
       const level = 
         newLinesCompleted >= linesPerLevel
-        ? previous.level++ : previous.level;
+        ? previous.level + 1 : previous.level;
       console.log(`new lines completed: ${newLinesCompleted} & lines per level: ${linesPerLevel}`);
       console.log(`previous level: ${previous.level}`);
       const linesCompleted = newLinesCompleted % linesPerLevel;
